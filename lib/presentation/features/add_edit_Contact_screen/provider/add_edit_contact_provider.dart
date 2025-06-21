@@ -76,9 +76,9 @@ class AddEditProvider extends ChangeNotifier with AddEditValidator {
   ) async {
     try {
       final contact = ContactModel(
-          firstName: userFirstName.hasValue ? userFirstName.value : '',
-          lastName: userLastName.hasValue ? userLastName.value : '',
-          companyName: userCompany.hasValue ? userCompany.value : '',
+          firstName: userFirstName.hasValue ? userFirstName.value.trim() : '',
+          lastName: userLastName.hasValue ? userLastName.value.trim() : '',
+          companyName: userCompany.hasValue ? userCompany.value.trim() : '',
           phoneNumber: userMobileNumber.hasValue ? userMobileNumber.value : '',
           email: userEmail.hasValue ? userEmail.value : '',
           profilePic: image,
@@ -144,9 +144,9 @@ class AddEditProvider extends ChangeNotifier with AddEditValidator {
     BuildContext context,
   ) async {
     final contact = ContactModel(
-        firstName: userFirstName.hasValue ? userFirstName.value : '',
-        lastName: userLastName.hasValue ? userLastName.value : '',
-        companyName: userCompany.hasValue ? userCompany.value : '',
+        firstName: userFirstName.hasValue ? userFirstName.value.trim() : '',
+        lastName: userLastName.hasValue ? userLastName.value.trim() : '',
+        companyName: userCompany.hasValue ? userCompany.value.trim() : '',
         phoneNumber: userMobileNumber.hasValue ? userMobileNumber.value : '',
         email: userEmail.hasValue ? userEmail.value : '',
         id: pageIs!.contactModel!.id != null &&
@@ -186,42 +186,6 @@ class AddEditProvider extends ChangeNotifier with AddEditValidator {
       }
     }
   }
-
-  // Future<void> selectUserProfilePhoto(
-  //     BuildContext context, ImageSource imageSource) async {
-  //   if (imageSource == ImageSource.camera) {
-  //     bool isPermissionGiven = await Permission.camera.isGranted;
-  //     if (isPermissionGiven == false) {
-  //       await Permission.camera.request();
-  //     }
-  //     isPermissionGiven = await Permission.camera.isGranted;
-  //     if (isPermissionGiven == false) {
-  //       await openAppSettings();
-  //       return;
-  //     }
-  //   } else {
-  //     bool isPermissionGiven = await Permission.mediaLibrary.isGranted;
-  //     if (isPermissionGiven == false) {
-  //       await Permission.mediaLibrary.request();
-  //     }
-  //     isPermissionGiven = await Permission.mediaLibrary.isGranted;
-  //     if (isPermissionGiven == false) {
-  //       await openAppSettings();
-  //       return;
-  //     }
-  //   }
-
-  //   final tempImage = await ImagePicker().pickImage(source: imageSource);
-  //   if (tempImage == null) {
-  //     return;
-  //   }
-
-  //   final imagePath = tempImage.path;
-  //   tempProfileImagePath = imagePath;
-  //   image = await tempImage.readAsBytes();
-  //   Navigator.pop(context);
-  //   notifyListeners();
-  // }
 
   Future<void> selectUserProfilePhoto(
       BuildContext context, ImageSource imageSource) async {
