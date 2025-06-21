@@ -87,7 +87,7 @@ class AddEditProvider extends ChangeNotifier with AddEditValidator {
       if (id != null) {
         if (context.mounted) {
           successSnackBar(context,
-              "${userFirstName.value} ${userLastName.hasValue ? userLastName.value : ''} added to contact successfully");
+              "${userFirstName.value.trim()} ${userLastName.hasValue ? userLastName.value.trim() : ''} added to contact successfully");
           final contactScreenController =
               Provider.of<ViewContactsScreenController>(context, listen: false);
           contactScreenController.refreshScreen();

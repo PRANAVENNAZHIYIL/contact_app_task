@@ -44,8 +44,12 @@ class AddContactButtonWidget extends StatelessWidget {
         onPressed: () => Navigator.pushNamed(context, "/AddEditScreen",
             arguments: AddEditNavParams(enums: AddOrEdit.add)),
         style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10))),
+          backgroundColor: buttonfavcolor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        ),
         child: const Text('Add Contact', style: TextStyle(color: whiteColor)));
   }
 }

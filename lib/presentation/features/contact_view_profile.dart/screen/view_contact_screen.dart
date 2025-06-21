@@ -23,17 +23,6 @@ class ViewContactProfileScreen extends StatefulWidget {
 class _ViewContactProfileScreenState extends State<ViewContactProfileScreen> {
   ContactModel? contact;
 
-  // @override
-  // void initState() {
-  //   WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-  //     final provider = Provider.of<ViewContactProfileScreenController>(context,
-  //         listen: false);
-  //     provider.inittiatePage(context);
-  //   });
-
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Consumer<ViewContactProfileScreenController>(

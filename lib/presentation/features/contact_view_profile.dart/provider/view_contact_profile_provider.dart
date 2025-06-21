@@ -28,7 +28,9 @@ class ViewContactProfileScreenController with ChangeNotifier {
         favoriteController.favoriteContacts.remove(contact);
         favoriteController.refreshScreen();
       }
+      favoriteController.refreshScreen();
       contactScreenController.refreshScreen();
+
       Navigator.pop(context);
       Navigator.pop(context);
     } catch (e) {
